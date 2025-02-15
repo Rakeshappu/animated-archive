@@ -45,7 +45,7 @@ const Hero = () => {
             <img
               src="/lovable-uploads/15f94349-1103-4075-8df5-b50ffc217470.png"
               alt="Profile"
-              className="relative w-full max-w-md mx-auto"
+              className="relative w-auto h-[30rem] mx-auto object-cover"
               style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
             />
           </div>
