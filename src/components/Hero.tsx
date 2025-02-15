@@ -41,11 +41,12 @@ const Hero = () => {
             </div>
           </div>
           <div className="relative animate-fade-in delay-300">
-            <div className="absolute inset-0 bg-primary rounded-full opacity-20 blur-3xl"></div>
+            <div className="absolute inset-0 bg-primary opacity-20 blur-3xl" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}></div>
             <img
               src="/lovable-uploads/15f94349-1103-4075-8df5-b50ffc217470.png"
               alt="Profile"
-              className="relative rounded-full w-full max-w-md mx-auto"
+              className="relative w-full max-w-md mx-auto"
+              style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
             />
           </div>
         </div>
