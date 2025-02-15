@@ -30,3 +30,8 @@
     @apply bg-primary;
   }
 }
+
+.animate-project {
+  opacity: 1 !important;
+  transform: translateX(0) rotate(0deg) !important;
+}
