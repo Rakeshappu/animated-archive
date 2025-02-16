@@ -1,5 +1,5 @@
 
-import { useEffect, useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import { GraduationCap, School, University } from 'lucide-react';
 
@@ -52,8 +52,6 @@ const Education = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-fade-in');
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
           }
         });
       },
@@ -68,50 +66,65 @@ const Education = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-neutral">
+    <div className="min-h-screen bg-gradient-to-b from-neutral to-neutral-light">
       <Navbar />
       <div className="container mx-auto px-6 pt-32 pb-16">
-        <h1 className="text-5xl font-bold text-primary text-center mb-6">Education</h1>
+        <h1 className="text-5xl font-bold text-primary text-center mb-6">Education Journey</h1>
         <p className="text-center text-gray-300 mb-16 max-w-2xl mx-auto">
-          My education has been a journey of self-discovery and growth. My educational details are as follows.
+          My academic path has been a journey of continuous learning and growth.
         </p>
 
-        <div className="space-y-16">
-          {educationData.map((edu, index) => (
-            <div
-              key={edu.institution}
-              ref={(el) => (educationRefs.current[index] = el)}
-              className="opacity-0 transform translate-y-10 transition-all duration-1000 ease-out"
-              style={{ 
-                transitionDelay: `${index * 200}ms`,
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                borderRadius: '1rem',
-                overflow: 'hidden'
-              }}
-            >
-              <div className="grid md:grid-cols-2 gap-8 p-8">
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <edu.icon className="w-8 h-8 text-primary" />
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary/30" />
+
+          <div className="space-y-24">
+            {educationData.map((edu, index) => (
+              <div
+                key={edu.institution}
+                ref={(el) => (educationRefs.current[index] = el)}
+                className={`relative grid md:grid-cols-2 gap-8 items-center opacity-0 transform 
+                  ${index % 2 === 0 ? '-translate-x-24' : 'translate-x-24'} 
+                  transition-all duration-1000`}
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full z-10">
+                  <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping" />
+                </div>
+
+                {/* Content */}
+                <div className={`space-y-4 ${index % 2 === 0 ? 'md:text-right' : 'md:order-2'}`}>
+                  <div className={`flex items-center space-x-4 ${index % 2 === 0 ? 'md:flex-row-reverse md:space-x-reverse' : ''}`}>
+                    <edu.icon className="w-10 h-10 text-primary flex-shrink-0" />
                     <h2 className="text-2xl font-semibold text-white">{edu.institution}</h2>
                   </div>
                   <div className="space-y-2">
-                    <p className="text-primary font-medium">{edu.course}</p>
+                    <p className="text-primary font-medium text-lg">{edu.course}</p>
                     <p className="text-gray-400">{edu.duration}</p>
-                    <p className="text-white font-semibold">Grade: {edu.grade}</p>
+                    <div className="inline-block bg-primary/10 px-4 py-2 rounded-full">
+                      <p className="text-primary font-semibold">Grade: {edu.grade}</p>
+                    </div>
                     <p className="text-gray-300">{edu.description}</p>
                   </div>
                 </div>
-                <div className="relative h-[200px] md:h-[300px] rounded-lg overflow-hidden">
-                  <img
-                    src={edu.image}
-                    alt={edu.institution}
-                    className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                  />
+
+                {/* Image */}
+                <div className={`${index % 2 === 0 ? 'md:order-2' : ''}`}>
+                  <div className={`relative h-[300px] rounded-xl overflow-hidden group 
+                    ${index % 2 === 0 ? 'transform -rotate-3' : 'rotate-3'}
+                    transition-transform hover:rotate-0 duration-500 shadow-2xl`}
+                  >
+                    <img
+                      src={edu.image}
+                      alt={edu.institution}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
