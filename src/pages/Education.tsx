@@ -66,65 +66,71 @@ const Education = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral to-neutral-light">
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-neutral to-neutral">
       <Navbar />
       <div className="container mx-auto px-6 pt-32 pb-16">
-        <h1 className="text-5xl font-bold text-primary text-center mb-6">Education Journey</h1>
-        <p className="text-center text-gray-300 mb-16 max-w-2xl mx-auto">
-          My academic path has been a journey of continuous learning and growth.
-        </p>
+        <div className="text-center space-y-4 mb-16">
+          <h1 className="text-6xl font-bold bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">
+            Educational Background
+          </h1>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Each step in my academic journey has shaped my perspective and skills
+          </p>
+        </div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary/30" />
-
-          <div className="space-y-24">
-            {educationData.map((edu, index) => (
-              <div
-                key={edu.institution}
-                ref={(el) => (educationRefs.current[index] = el)}
-                className={`relative grid md:grid-cols-2 gap-8 items-center opacity-0 transform 
-                  ${index % 2 === 0 ? '-translate-x-24' : 'translate-x-24'} 
-                  transition-all duration-1000`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full z-10">
-                  <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping" />
+        <div className="grid gap-16">
+          {educationData.map((edu, index) => (
+            <div
+              key={edu.institution}
+              ref={(el) => (educationRefs.current[index] = el)}
+              className="opacity-0"
+            >
+              <div className="relative">
+                {/* Large year display */}
+                <div className="absolute -left-4 top-0 text-9xl font-bold text-primary/5 -z-10 select-none">
+                  {edu.duration.split(' - ')[0].slice(-4)}
                 </div>
 
-                {/* Content */}
-                <div className={`space-y-4 ${index % 2 === 0 ? 'md:text-right' : 'md:order-2'}`}>
-                  <div className={`flex items-center space-x-4 ${index % 2 === 0 ? 'md:flex-row-reverse md:space-x-reverse' : ''}`}>
-                    <edu.icon className="w-10 h-10 text-primary flex-shrink-0" />
-                    <h2 className="text-2xl font-semibold text-white">{edu.institution}</h2>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-primary font-medium text-lg">{edu.course}</p>
-                    <p className="text-gray-400">{edu.duration}</p>
-                    <div className="inline-block bg-primary/10 px-4 py-2 rounded-full">
-                      <p className="text-primary font-semibold">Grade: {edu.grade}</p>
-                    </div>
-                    <p className="text-gray-300">{edu.description}</p>
-                  </div>
-                </div>
-
-                {/* Image */}
-                <div className={`${index % 2 === 0 ? 'md:order-2' : ''}`}>
-                  <div className={`relative h-[300px] rounded-xl overflow-hidden group 
-                    ${index % 2 === 0 ? 'transform -rotate-3' : 'rotate-3'}
-                    transition-transform hover:rotate-0 duration-500 shadow-2xl`}
-                  >
+                <div className="grid md:grid-cols-[2fr,3fr] gap-8 items-center bg-white/5 rounded-3xl p-8 backdrop-blur-sm border border-white/10 hover:border-primary/30 transition-all duration-500">
+                  {/* Left side - Image */}
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-2xl transform rotate-6 scale-95 transition-transform duration-500 group-hover:rotate-2 group-hover:scale-105" />
                     <img
                       src={edu.image}
                       alt={edu.institution}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-[300px] object-cover rounded-2xl shadow-xl transform transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-2"
                     />
-                    <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
+                  </div>
+
+                  {/* Right side - Content */}
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-primary/10 rounded-xl">
+                        <edu.icon className="w-8 h-8 text-primary" />
+                      </div>
+                      <div>
+                        <h2 className="text-2xl font-bold text-white mb-2">{edu.institution}</h2>
+                        <p className="text-primary">{edu.course}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-4">
+                      <span className="px-4 py-2 bg-primary/10 rounded-full text-primary font-medium">
+                        {edu.duration}
+                      </span>
+                      <span className="px-4 py-2 bg-primary/10 rounded-full text-primary font-medium">
+                        Grade: {edu.grade}
+                      </span>
+                    </div>
+
+                    <p className="text-gray-300 leading-relaxed">
+                      {edu.description}
+                    </p>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
