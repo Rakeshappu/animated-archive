@@ -5,29 +5,145 @@ import Navbar from '@/components/Navbar';
 interface Project {
   title: string;
   technologies: string;
-  startDate: string;
-  endDate: string;
+  date: string;
+  // startDate: string;
+  // endDate: string;
   description: string;
   image: string;
 }
 
 const projects: Project[] = [
   {
+    title: "Versatile Share",
+    technologies: "Next.js, Vite, MERN",
+    date: "August 2025 | Major-Project",
+    // endDate: "2023-06",
+    description: `Resource Sharing Platform for ISE department
+A centralized platform where all resources across all semesters are well organized for both students and faculty. The platform will feature analytics to provide insights into the usage and effectiveness of each resource.
+Key features include integration of AI and data scrapping. The platform will deliver personalized study materials based on individual needs and preferences, helping students focus on the most relevant content. Focused on real-time users. And AI generated summaries.`,
+    image: "/placeholder.svg"
+  },
+  {
     title: "Job Portal",
     technologies: "React, Node.js",
-    startDate: "2023-01",
-    endDate: "2023-06",
-    description: "Developed a MERN Stack-based job portal web application enabling recruiters to post jobs and applicants to apply for jobs. Implemented features for recruiters to create, update, and manage job postings, and for applicants to search, filter, and submit applications.",
-    image: "/lovable-uploads/8ecab248-27a2-4925-8a9c-e272968c97b1.png"
+    date: "August 2024 | Mini-Project",
+    // endDate: "2023-06",
+    description: `• Developed a MERN Stack-based job portal web application
+enabling recruiters to post jobs and applicants to apply for jobs.
+• Implemented features for recruiters to create, update, and manage
+job postings, and for applicants to search, filter, and submit
+applications.
+• Focused on user authentication, data management with MongoDB,
+and server-side logic using Node.js and Express.`,
+    image: "/placeholder.svg"
   },
   {
     title: "Carbon Footprint Calculator",
     technologies: "HTML CSS JS REACT NODE.JS Typescript",
-    startDate: "2023-07",
-    endDate: "2023-12",
-    description: "We developed a Carbon Footprint Calculator as part of a four-member team during a competitive hackathon.",
+    date: "January 2024 | Infothon",
+    // startDate: "2023-07",
+    // endDate: "2023-12",
+    description: `• Developed a Carbon Footprint Calculator that estimates individual
+carbon footprints based on user inputs like electricity usage,
+kilometers driven, etc.
+• Contributed to front-end development using HTML and CSS, while
+Django powered the back-end for input handling and calculations.
+• Provided users with actionable insights, including tree-planting
+equivalents and carbon reduction tips.`,
     image: "/placeholder.svg"
-  }
+  },
+  {
+    title: "Resume Builder",
+    technologies: "MERN",
+    date: "August 2024",
+    // startDate: "2023-07",
+    // endDate: "2023-12",
+    description: ``,
+    image: "/placeholder.svg"
+  },
+  {
+    title: "Epolice-website",
+    technologies: "HTML CSS Django",
+    date: "January 2024",
+    // startDate: "2023-07",
+    // endDate: "2023-12",
+    description: ``,
+    image: "/placeholder.svg"
+  },
+  {
+    title: "Crop Recommendation Model",
+    technologies: "Ml, Django",
+    date: "December 2023 | Hacksprint",
+    description: `• Developed a Carbon Footprint Calculator that estimates individual
+carbon footprints based on user inputs like electricity usage,
+kilometers driven, etc.
+• Contributed to front-end development using HTML and CSS, while
+Django powered the back-end for input handling and calculations.
+• Provided users with actionable insights, including tree-planting
+equivalents and carbon reduction tips.`,
+    image: "/placeholder.svg"
+  },
+  {
+    title: "Text Utils",
+    technologies: "React",
+    date: "September 2024",
+    description: `• Created a text utility application using React Hooks, offering a
+variety of text manipulation features.
+• Key features include word and character counting, space removal,
+auto-dismissing alert messages, and theme customization.`,
+    image: "/placeholder.svg"
+  },
+  {
+    title: "Rock-Paper-Scissors",
+    technologies: "HTML CSS JavaScript",
+    date: "May 2024",
+    description: ``,
+    image: "/placeholder.svg"
+  },
+  {
+    title: "Currency Convertor",
+    technologies: "JavaScript",
+    date: "June 2024",
+    description: ``,
+    image: "/placeholder.svg"
+  },
+  {
+    title: "URL-Shortener",
+    technologies: "Javascript",
+    date: "July 2024",
+    description: `• Created a text utility application using React Hooks, offering a
+variety of text manipulation features.
+• Key features include word and character counting, space removal,
+auto-dismissing alert messages, and theme customization.`,
+    image: "/placeholder.svg"
+  },
+  {
+    title: "TETRIS GAME",
+    technologies: "HTML CSS JS",
+    date: "June 2024",
+    description: `• Developed a Tetris game to enhance programming skills.
+• Utilized HTML and CSS to create an engaging front-end interface.
+Implemented game functionality and mathematical calculations
+using JavaScript.`,
+    image: "/placeholder.svg"
+  },
+  {
+    title: "Calculator",
+    technologies: "HTML CSS JS",
+    date: "June 2024",
+    description: `• Developed a Tetris game to enhance programming skills.
+• Utilized HTML and CSS to create an engaging front-end interface.
+Implemented game functionality and mathematical calculations
+using JavaScript.`,
+    image: "/placeholder.svg"
+  },
+  {
+    title: "Tic-Tac-Toe",
+    technologies: "HTML CSS JS",
+    date: "May 2024",
+    description: ``,
+    image: "/placeholder.svg"
+  },
 ];
 
 const Projects = () => {
@@ -80,9 +196,10 @@ const Projects = () => {
                     <span className="font-semibold">Technologies:</span> {project.technologies}
                   </p>
                   <p className="text-gray-300">
-                    <span className="font-semibold">Duration:</span>{' '}
-                    {new Date(project.startDate).toLocaleDateString()} -{' '}
-                    {new Date(project.endDate).toLocaleDateString()}
+                    <span className="font-semibold"></span>{' '}
+                    {project.date}
+                    {/* {new Date(project.startDate).toLocaleDateString()} -{' '}
+                    {new Date(project.endDate).toLocaleDateString()} */}
                   </p>
                 </div>
                 <p className="text-gray-300 leading-relaxed">{project.description}</p>

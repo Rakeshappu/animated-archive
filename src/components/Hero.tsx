@@ -1,5 +1,7 @@
 
-import { Github, Linkedin, Globe, Twitter } from 'lucide-react';
+import { Github, Linkedin, Globe, Twitter,Code } from 'lucide-react';
+import hero from '../images/15.png'
+import HackerRankIcon from "../../HackerRankIcon";
 
 const Hero = () => {
   return (
@@ -18,15 +20,21 @@ const Hero = () => {
               high-quality results. With a positive attitude and a growth mindset,
               I am ready to make a meaningful contribution and achieve great things.
             </p>
-            <button className="bg-primary hover:bg-primary-dark text-neutral px-8 py-3 rounded-full transition-colors duration-300 font-semibold">
+            <br />
+            <a target="_blank" href="https://drive.google.com/file/d/1mHTobJ-Nt4x8QKBQNOFMeOSdSfPwtBQ3/view?usp=drive_link">
+            <button  className="bg-primary hover:bg-primary-dark text-neutral px-8 py-3 rounded-full transition-colors duration-300 font-semibold">
               Check Resume
             </button>
+            </a>
+
             <div className="flex space-x-6 pt-4">
               {[
-                { Icon: Github, link: '#' },
-                { Icon: Linkedin, link: '#' },
-                { Icon: Globe, link: '#' },
-                { Icon: Twitter, link: '#' },
+                { Icon: Github, link: 'https://github.com/rakeshappu' },
+                { Icon: Linkedin, link: 'https://www.linkedin.com/in/rakesh2628/' },
+                { Icon: Twitter, link: 'https://twitter.com/rakeshssrh' },
+                { Icon: HackerRankIcon, link: 'https://www.hackerrank.com/profile/appussrh' },
+                { Icon: Code, link: 'https://leetcode.com/u/Rakeshssrh/' },
+                
               ].map(({ Icon, link }, index) => (
                 <a
                   key={index}
@@ -41,12 +49,12 @@ const Hero = () => {
             </div>
           </div>
           <div className="relative animate-fade-in delay-300">
-            <div className="absolute inset-0 bg-primary opacity-20 blur-3xl" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}></div>
+            <div className="absolute inset-0 bg-primary opacity-20 blur-3xl" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%'}}></div>
             <img
-              src="/lovable-uploads/15f94349-1103-4075-8df5-b50ffc217470.png"
+              src={hero}
               alt="Profile"
               className="relative w-auto h-[30rem] mx-auto object-cover"
-              style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
+              style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%', border:'2px solid black' }}
             />
           </div>
         </div>
