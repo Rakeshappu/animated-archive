@@ -13,7 +13,6 @@ const skillsData = {
     { name: 'HTML', icon: '🌐', color: '#E34F26' },
     { name: 'CSS', icon: '🎨', color: '#1572B6' },
     { name: 'JavaScript', icon: '📜', color: '#F7DF1E' },
-    { name: 'C', icon: '©️', color: '#0FA0CE' },
   ],
   backend: [
     { name: 'Node Js', icon: '🟢', color: '#339933' },
