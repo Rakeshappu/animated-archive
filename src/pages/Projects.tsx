@@ -1,6 +1,18 @@
 
 import { useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar';
+import versatileShare from '../images/VersatileShare.png'
+import jobPortal from '../images/jobPortal.png'
+import resumeBuilder from '../images/resumeBuilder.png'
+import ePoliceWebsite from '../images/ePoliceWebsite.png'
+import cropRecommendation from '../images/cropRecommendation.png'
+import carbonFootprint from '../images/carbonFootprint.png'
+import textUtils from '../images/textUtils.png'
+import rockPaper from '../images/rockPaper.png'
+import currencyConvertor from '../images/currencyConvertor.png'
+import tictoctoe from '../images/tictoctoe.png'
+import calculator from '../images/calculator.png'
+import urlShortener from '../images/urlShortener.png'
 
 interface Project {
   title: string;
@@ -21,7 +33,7 @@ const projects: Project[] = [
     description: `Resource Sharing Platform for ISE department
 A centralized platform where all resources across all semesters are well organized for both students and faculty. The platform will feature analytics to provide insights into the usage and effectiveness of each resource.
 Key features include integration of AI and data scrapping. The platform will deliver personalized study materials based on individual needs and preferences, helping students focus on the most relevant content. Focused on real-time users. And AI generated summaries.`,
-    image: "/placeholder.svg"
+    image: versatileShare
   },
   {
     title: "Job Portal",
@@ -35,7 +47,7 @@ job postings, and for applicants to search, filter, and submit
 applications.
 • Focused on user authentication, data management with MongoDB,
 and server-side logic using Node.js and Express.`,
-    image: "/placeholder.svg"
+    image: jobPortal
   },
   {
     title: "Carbon Footprint Calculator",
@@ -50,7 +62,7 @@ kilometers driven, etc.
 Django powered the back-end for input handling and calculations.
 • Provided users with actionable insights, including tree-planting
 equivalents and carbon reduction tips.`,
-    image: "/placeholder.svg"
+    image: carbonFootprint
   },
   {
     title: "Resume Builder",
@@ -59,7 +71,7 @@ equivalents and carbon reduction tips.`,
     // startDate: "2023-07",
     // endDate: "2023-12",
     description: ``,
-    image: "/placeholder.svg"
+    image: resumeBuilder
   },
   {
     title: "Epolice-website",
@@ -68,7 +80,7 @@ equivalents and carbon reduction tips.`,
     // startDate: "2023-07",
     // endDate: "2023-12",
     description: ``,
-    image: "/placeholder.svg"
+    image: ePoliceWebsite
   },
   {
     title: "Crop Recommendation Model",
@@ -81,7 +93,7 @@ kilometers driven, etc.
 Django powered the back-end for input handling and calculations.
 • Provided users with actionable insights, including tree-planting
 equivalents and carbon reduction tips.`,
-    image: "/placeholder.svg"
+    image: cropRecommendation
   },
   {
     title: "Text Utils",
@@ -91,21 +103,21 @@ equivalents and carbon reduction tips.`,
 variety of text manipulation features.
 • Key features include word and character counting, space removal,
 auto-dismissing alert messages, and theme customization.`,
-    image: "/placeholder.svg"
+    image: textUtils
   },
   {
     title: "Rock-Paper-Scissors",
     technologies: "HTML CSS JavaScript",
     date: "May 2024",
     description: ``,
-    image: "/placeholder.svg"
+    image: rockPaper
   },
   {
     title: "Currency Convertor",
     technologies: "JavaScript",
     date: "June 2024",
     description: ``,
-    image: "/placeholder.svg"
+    image: currencyConvertor
   },
   {
     title: "URL-Shortener",
@@ -115,7 +127,7 @@ auto-dismissing alert messages, and theme customization.`,
 variety of text manipulation features.
 • Key features include word and character counting, space removal,
 auto-dismissing alert messages, and theme customization.`,
-    image: "/placeholder.svg"
+    image: urlShortener
   },
   {
     title: "TETRIS GAME",
@@ -135,14 +147,14 @@ using JavaScript.`,
 • Utilized HTML and CSS to create an engaging front-end interface.
 Implemented game functionality and mathematical calculations
 using JavaScript.`,
-    image: "/placeholder.svg"
+    image: calculator
   },
   {
     title: "Tic-Tac-Toe",
     technologies: "HTML CSS JS",
     date: "May 2024",
     description: ``,
-    image: "/placeholder.svg"
+    image: tictoctoe
   },
 ];
 
