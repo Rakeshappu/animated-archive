@@ -1,17 +1,18 @@
+
 import { useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar';
-import versatileShare from '../images/VersatileShare.png'
-import jobPortal from '../images/jobPortal.png'
-import resumeBuilder from '../images/resumeBuilder.png'
-import ePoliceWebsite from '../images/ePoliceWebsite.png'
-import cropRecommendation from '../images/cropRecommendation.png'
-import carbonFootprint from '../images/carbonFootprint.png'
-import textUtils from '../images/textUtils.png'
-import rockPaper from '../images/rockPaper.png'
-import currencyConvertor from '../images/currencyConvertor.png'
-import tictoctoe from '../images/tictoctoe.png'
-import calculator from '../images/calculator.png'
-import urlShortener from '../images/urlShortener.png'
+import versatileShare from '@/images/VersatileShare.png'
+import jobPortal from '@/images/jobPortal.png'
+import resumeBuilder from '@/images/resumeBuilder.png'
+import ePoliceWebsite from '@/images/ePoliceWebsite.png'
+import cropRecommendation from '@/images/cropRecommendation.png'
+import carbonFootprint from '@/images/carbonFootprint.png'
+import textUtils from '@/images/textUtils.png'
+import rockPaper from '@/images/rockPaper.png'
+import currencyConvertor from '@/images/currencyConvertor.png'
+import tictoctoe from '@/images/tictoctoe.png'
+import calculator from '@/images/calculator.png'
+import urlShortener from '@/images/urlShortener.png'
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
 
