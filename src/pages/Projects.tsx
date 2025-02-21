@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '@/components/Navbar';
 import versatileShare from '../images/VersatileShare.png'
 import jobPortal from '../images/jobPortal.png'
 import resumeBuilder from '../images/resumeBuilder.png'
@@ -13,17 +13,15 @@ import currencyConvertor from '../images/currencyConvertor.png'
 import tictoctoe from '../images/tictoctoe.png'
 import calculator from '../images/calculator.png'
 import urlShortener from '../images/urlShortener.png'
-import { Button } from '../components/ui/button';
-import { ExternalLink, Github } from 'lucide-react';
 
 interface Project {
   title: string;
   technologies: string;
   date: string;
+  // startDate: string;
+  // endDate: string;
   description: string;
   image: string;
-  githubLink?: string;
-  liveLink?: string;
 }
 
 const projects: Project[] = [
@@ -31,17 +29,17 @@ const projects: Project[] = [
     title: "Versatile Share",
     technologies: "Next.js, Vite, MERN",
     date: "August 2025 | Major-Project",
+    // endDate: "2023-06",
     description: `Resource Sharing Platform for ISE department
 A centralized platform where all resources across all semesters are well organized for both students and faculty. The platform will feature analytics to provide insights into the usage and effectiveness of each resource.
 Key features include integration of AI and data scrapping. The platform will deliver personalized study materials based on individual needs and preferences, helping students focus on the most relevant content. Focused on real-time users. And AI generated summaries.`,
-    image: versatileShare,
-    githubLink: "https://github.com/yourusername/versatile-share",
-    liveLink: "https://versatile-share.demo.com"
+    image: versatileShare
   },
   {
     title: "Job Portal",
     technologies: "React, Node.js",
     date: "August 2024 | Mini-Project",
+    // endDate: "2023-06",
     description: `• Developed a MERN Stack-based job portal web application
 enabling recruiters to post jobs and applicants to apply for jobs.
 • Implemented features for recruiters to create, update, and manage
@@ -55,6 +53,8 @@ and server-side logic using Node.js and Express.`,
     title: "Carbon Footprint Calculator",
     technologies: "HTML CSS JS REACT NODE.JS Typescript",
     date: "January 2024 | Infothon",
+    // startDate: "2023-07",
+    // endDate: "2023-12",
     description: `• Developed a Carbon Footprint Calculator that estimates individual
 carbon footprints based on user inputs like electricity usage,
 kilometers driven, etc.
@@ -68,6 +68,8 @@ equivalents and carbon reduction tips.`,
     title: "Resume Builder",
     technologies: "MERN",
     date: "August 2024",
+    // startDate: "2023-07",
+    // endDate: "2023-12",
     description: ``,
     image: resumeBuilder
   },
@@ -75,6 +77,8 @@ equivalents and carbon reduction tips.`,
     title: "Epolice-website",
     technologies: "HTML CSS Django",
     date: "January 2024",
+    // startDate: "2023-07",
+    // endDate: "2023-12",
     description: ``,
     image: ePoliceWebsite
   },
@@ -206,38 +210,21 @@ const Projects = () => {
                   <p className="text-gray-300">
                     <span className="font-semibold"></span>{' '}
                     {project.date}
+                    {/* {new Date(project.startDate).toLocaleDateString()} -{' '}
+                    {new Date(project.endDate).toLocaleDateString()} */}
                   </p>
                 </div>
                 <p className="text-gray-300 leading-relaxed">{project.description}</p>
-                <div className="flex gap-4">
-                  <Button 
-                    variant="outline" 
-                    className="flex items-center gap-2"
-                    onClick={() => window.open(project.githubLink, '_blank')}
-                  >
-                    <Github className="w-4 h-4" />
-                    View Code
-                  </Button>
-                  <Button 
-                    className="flex items-center gap-2"
-                    onClick={() => window.open(project.liveLink, '_blank')}
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    Live Link
-                  </Button>
-                </div>
+                <button className="bg-primary hover:bg-primary-dark text-neutral px-6 py-2 rounded-full transition-colors duration-300">
+                  Learn More
+                </button>
               </div>
-              <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'} relative group`}>
+              <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-[300px] object-cover rounded-lg shadow-xl transition-all duration-300 group-hover:opacity-50"
+                  className="w-full h-[300px] object-cover rounded-lg shadow-xl"
                 />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-lg font-semibold bg-black/50 px-4 py-2 rounded">
-                    Click to view code
-                  </p>
-                </div>
               </div>
             </div>
           ))}
