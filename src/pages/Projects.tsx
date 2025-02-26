@@ -225,11 +225,11 @@ const Projects = () => {
                   </a>
                 </div>
               </div>
-              <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'} relative group w-full aspect-[4/3] min-h-[200px]`}>
+              <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'} relative group w-full aspect-[16/9] max-h-[250px]`}>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-xl transition-all duration-300 group-hover:blur-sm"
+                  className="absolute inset-0 w-full h-full object-contain rounded-lg shadow-xl transition-all duration-300 group-hover:blur-sm"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="text-white text-base sm:text-xl font-semibold bg-black/50 px-4 sm:px-6 py-2 sm:py-3 rounded-full whitespace-nowrap">
