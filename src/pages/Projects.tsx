@@ -18,8 +18,6 @@ interface Project {
   title: string;
   technologies: string;
   date: string;
-  // startDate: string;
-  // endDate: string;
   description: string;
   image: string;
 }
@@ -210,29 +208,33 @@ const Projects = () => {
                   <p className="text-gray-300">
                     <span className="font-semibold"></span>{' '}
                     {project.date}
-                    {/* {new Date(project.startDate).toLocaleDateString()} -{' '}
-                    {new Date(project.endDate).toLocaleDateString()} */}
                   </p>
                 </div>
                 <p className="text-gray-300 leading-relaxed">{project.description}</p>
                 <br />
                 <a href="">
                   <button className="bg-primary hover:bg-primary-dark text-neutral px-6 py-2 rounded-full transition-colors duration-300">
-                  Code (Github) 
-                </button>
-                </a><span> </span>
+                    Code (Github) 
+                  </button>
+                </a>
+                <span> </span>
                 <a href="">
                   <button className="bg-primary hover:bg-primary-dark text-neutral px-6 py-2 rounded-full transition-colors duration-300">
-                  Live Preview
-                </button>
+                    Live Preview
+                  </button>
                 </a>
               </div>
-              <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+              <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'} relative group`}>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-[300px] object-cover rounded-lg shadow-xl"
+                  className="w-full h-[300px] object-cover rounded-lg shadow-xl transition-all duration-300 group-hover:blur-sm"
                 />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-white text-xl font-semibold bg-black/50 px-6 py-3 rounded-full">
+                    View Code
+                  </span>
+                </div>
               </div>
             </div>
           ))}
