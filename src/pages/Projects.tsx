@@ -181,17 +181,17 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-neutral">
       <Navbar />
-      <div className="container mx-auto px-6 pt-32 pb-16">
+      <div className="container mx-auto px-4 sm:px-6 pt-32 pb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">
           My Projects
         </h1>
         
-        <div className="space-y-32">
+        <div className="space-y-16 sm:space-y-24 md:space-y-32">
           {projects.map((project, index) => (
             <div
               key={project.title}
               ref={(el) => (projectRefs.current[index] = el)}
-              className={`relative grid md:grid-cols-2 gap-8 items-center opacity-0 ${
+              className={`relative grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center opacity-0 ${
                 index % 2 === 0 ? 'md:translate-x-[-300px]' : 'md:translate-x-[300px]'
               }`}
               style={{
@@ -200,7 +200,7 @@ const Projects = () => {
               }}
             >
               <div className={`space-y-4 ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
-                <h2 className="text-3xl font-bold text-primary">{project.title}</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-primary">{project.title}</h2>
                 <div className="space-y-2">
                   <p className="text-gray-300">
                     <span className="font-semibold">Technologies:</span> {project.technologies}
@@ -212,26 +212,27 @@ const Projects = () => {
                 </div>
                 <p className="text-gray-300 leading-relaxed">{project.description}</p>
                 <br />
-                <a href="">
-                  <button className="bg-primary hover:bg-primary-dark text-neutral px-6 py-2 rounded-full transition-colors duration-300">
-                    Code (Github) 
-                  </button>
-                </a>
-                <span> </span>
-                <a href="">
-                  <button className="bg-primary hover:bg-primary-dark text-neutral px-6 py-2 rounded-full transition-colors duration-300">
-                    Live Preview
-                  </button>
-                </a>
+                <div className="flex flex-wrap gap-4">
+                  <a href="">
+                    <button className="bg-primary hover:bg-primary-dark text-neutral px-4 sm:px-6 py-2 rounded-full transition-colors duration-300 text-sm sm:text-base">
+                      Code (Github) 
+                    </button>
+                  </a>
+                  <a href="">
+                    <button className="bg-primary hover:bg-primary-dark text-neutral px-4 sm:px-6 py-2 rounded-full transition-colors duration-300 text-sm sm:text-base">
+                      Live Preview
+                    </button>
+                  </a>
+                </div>
               </div>
-              <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'} relative group`}>
+              <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'} relative group w-full aspect-[4/3] min-h-[200px]`}>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-[300px] object-cover rounded-lg shadow-xl transition-all duration-300 group-hover:blur-sm"
+                  className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-xl transition-all duration-300 group-hover:blur-sm"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-xl font-semibold bg-black/50 px-6 py-3 rounded-full">
+                  <span className="text-white text-base sm:text-xl font-semibold bg-black/50 px-4 sm:px-6 py-2 sm:py-3 rounded-full whitespace-nowrap">
                     View Code
                   </span>
                 </div>
