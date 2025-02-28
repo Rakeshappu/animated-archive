@@ -24,15 +24,30 @@ const Navbar = () => {
             Portfolio
           </Link>
           <div className="hidden md:flex space-x-8">
-            {['Skills', 'Experience', 'Projects', 'Education'].map((item) => (
-              <Link
-                key={item}
-                to={`/${item.toLowerCase()}`}
-                className="text-white hover:text-primary transition-colors duration-300"
-              >
-                {item}
-              </Link>
-            ))}
+            <Link
+              to="/skills"
+              className="text-white hover:text-primary transition-colors duration-300"
+            >
+              Skills
+            </Link>
+            <Link
+              to="/experience"
+              className="text-white hover:text-primary transition-colors duration-300"
+            >
+              Experience
+            </Link>
+            <Link
+              to="/projects"
+              className="text-white hover:text-primary transition-colors duration-300"
+            >
+              Projects
+            </Link>
+            <Link
+              to="/education"
+              className="text-white hover:text-primary transition-colors duration-300"
+            >
+              Education
+            </Link>
             <Link
               to="/"
               className="text-white hover:text-primary transition-colors duration-300"
