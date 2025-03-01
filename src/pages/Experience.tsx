@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -72,31 +71,31 @@ const Experience = () => {
   return (
     <div className="min-h-screen bg-neutral flex flex-col">
       <Navbar />
-      <div className="flex-grow container mx-auto px-6 pt-32 pb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-8 animate-fade-in">
+      <div className="flex-grow container mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6 sm:mb-8 animate-fade-in">
           Experience
         </h1>
 
-        <section className="mb-16 animate-fade-in">
-          <div className="bg-neutral-light/20 backdrop-blur-md rounded-lg p-6 md:p-8 shadow-xl">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-4">
+        <section className="mb-8 sm:mb-16 animate-fade-in">
+          <div className="bg-neutral-light/20 backdrop-blur-md rounded-lg p-4 sm:p-6 md:p-8 shadow-xl">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary mb-3 sm:mb-4">
                 Professional Journey
               </h2>
-              <p className="text-gray-300 max-w-3xl mx-auto">
+              <p className="text-gray-300 max-w-3xl mx-auto text-sm sm:text-base">
                 I'm currently building my industry experience through personal and academic projects. I'm passionate about technology and continuously enhancing my skills to prepare for professional opportunities.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-neutral-light/30 rounded-lg p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-primary mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              <div className="bg-neutral-light/30 rounded-lg p-4 sm:p-6 hover:shadow-md transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold text-primary mb-2">
                   Looking for Opportunities
                 </h3>
-                <p className="text-gray-300 mb-4">
+                <p className="text-gray-300 mb-4 text-sm sm:text-base">
                   I'm actively seeking internships and entry-level positions in software development where I can apply my skills and grow professionally.
                 </p>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <ul className="list-disc list-inside text-gray-300 space-y-2 text-sm sm:text-base">
                   <li>Full Stack Development</li>
                   <li>Frontend Development</li>
                   <li>Backend Development</li>
@@ -108,12 +107,12 @@ const Experience = () => {
         </section>
 
         <section className="animate-fade-in">
-          <div className="bg-neutral-light/20 backdrop-blur-md rounded-lg p-6 md:p-8 shadow-xl">
-            <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-8 text-center">
+          <div className="bg-neutral-light/20 backdrop-blur-md rounded-lg p-4 sm:p-6 md:p-8 shadow-xl">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary mb-6 sm:mb-8 text-center">
               Certifications & Achievements
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
               {certificates.map((cert, index) => (
                 <motion.div
                   key={cert.id}
@@ -122,20 +121,20 @@ const Experience = () => {
                   transition={{ delay: index * 0.1 }}
                   className="bg-neutral-light/30 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full"
                 >
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-semibold text-primary">
+                  <div className="p-4 sm:p-6">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
+                      <h3 className="text-lg sm:text-xl font-semibold text-primary mb-1 sm:mb-0">
                         {cert.name}
                       </h3>
-                      <span className="text-sm text-gray-400">{cert.date}</span>
+                      <span className="text-xs sm:text-sm text-gray-400">{cert.date}</span>
                     </div>
-                    <p className="text-gray-300 mb-4">Issued by: {cert.issuer}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <p className="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">Issued by: {cert.issuer}</p>
+                    <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
                       {cert.skills.map((skill, idx) => (
                         <Badge
                           key={idx}
                           variant="outline"
-                          className="bg-primary/10 text-primary border-primary/30"
+                          className="bg-primary/10 text-primary border-primary/30 text-xs sm:text-sm"
                         >
                           {skill}
                         </Badge>
@@ -148,10 +147,10 @@ const Experience = () => {
                           <img 
                             src={cert.media} 
                             alt={cert.name} 
-                            className="w-full h-auto max-h-40 object-contain mb-4 cursor-pointer hover:opacity-90 transition-opacity"
+                            className="w-full h-auto max-h-32 sm:max-h-40 object-contain mb-2 sm:mb-4 cursor-pointer hover:opacity-90 transition-opacity"
                           />
                         </DialogTrigger>
-                        <DialogContent className="max-w-3xl max-h-[80vh] overflow-auto bg-neutral-light/90 p-4">
+                        <DialogContent className="max-w-[90vw] sm:max-w-3xl max-h-[80vh] overflow-auto bg-neutral-light/90 p-2 sm:p-4">
                           <img 
                             src={cert.media} 
                             alt={cert.name} 
@@ -160,7 +159,6 @@ const Experience = () => {
                         </DialogContent>
                       </Dialog>
                     )}
-                    
                   </div>
                 </motion.div>
               ))}
