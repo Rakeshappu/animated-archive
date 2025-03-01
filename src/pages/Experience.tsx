@@ -2,26 +2,31 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
+import hackerRank from "../images/HackerRank.png"
+import PS from "../images/PS.png"
+import GAI from "../images/GAI.png"
+import NPTL from "../images/NPTL.png"
+import AIML from "../images/ALML.png"
+import AD from "../images/AD.png"
 
 const Experience = () => {
   const certificates = [
     {
       id: 1,
-      name: "Problem Solving (4 Starts)",
+      name: "HackerRank badges",
       issuer: "HackerRank",
       date: "Since 2023",
       skills: ["C language, JavaScript"],
-      media: "/lovable-uploads/15f94349-1103-4075-8df5-b50ffc217470.png",
-      credentialLink: "#",
+      media: hackerRank,
     },
     {
       id: 2,
-      name: "C Language (4 Starts)",
+      name: "Problem Solving (Basic) Certificate",
       issuer: "HackerRank",
       date: "Since 2023",
       skills: ["C language"],
-      media: "",
-      credentialLink: "#",
+      media: PS,
+    
     },
     {
       id: 3,
@@ -29,8 +34,8 @@ const Experience = () => {
       issuer: "All India Council for Technical Education",
       date: "October 2024",
       skills: ["AI"],
-      media: "",
-      credentialLink: "9e1f88c410469c0c4408f32ae321d6d0",
+      media: GAI,
+      
     },
     {
       id: 4,
@@ -38,8 +43,8 @@ const Experience = () => {
       issuer: "NPTEL ONLINE CERTIFICATION",
       date: "October 2024",
       skills: ["Python"],
-      media: "",
-      credentialLink: "#",
+      media: NPTL,
+    
     },
     {
       id: 5,
@@ -47,26 +52,17 @@ const Experience = () => {
       issuer: "All India Council for Technical Education",
       date: "June 2024",
       skills: ["AI","ML"],
-      media: "",
-      credentialLink: "2ddfd068e309db8c8a31cb66afd3ff06",
+      media: AIML,
+      
     },
     {
       id: 6,
-      name: "Problem Solving (Basic) Certificate",
-      issuer: "HackerRank",
-      date: "October 2024",
-      skills: ["C"],
-      media: "",
-      credentialLink: "#",
-    },
-    {
-      id: 7,
       name: "Android Developer Virtual Internship",
       issuer: "All India Council for Technical Education",
       date: "January 2024",
       skills: [""],
-      media: "",
-      credentialLink: "#",
+      media: AD,
+    
     },
   ];
 
@@ -143,14 +139,7 @@ const Experience = () => {
                       ))}
                     </div>
                     {cert.media && <img src={cert.media} alt={cert.name} className="w-full h-auto max-h-40 object-contain mb-4" />}
-                    <a
-                      href={cert.credentialLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-primary-dark underline text-sm mt-auto inline-block"
-                    >
-                      View credential
-                    </a>
+                    
                   </div>
                 </motion.div>
               ))}
