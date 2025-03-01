@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
-import GenAI from "@/images/GenAI.png";
+// Removing the problematic import and using optional media property
 
 const Experience = () => {
   const certificates = [
@@ -13,7 +13,6 @@ const Experience = () => {
       issuer: "HackerRank",
       date: "Since 2023",
       skills: ["C language, JavaScript"],
-      media: GenAI,
       credentialLink: "#",
     },
     {
@@ -147,7 +146,8 @@ const Experience = () => {
                         </Badge>
                       ))}
                     </div>
-                    <img src={cert.media} alt="" />
+                    {/* Only render image if cert.media exists */}
+                    {cert.media && <img src={cert.media} alt="" />}
                     <a
                       href={cert.credentialLink}
                       target="_blank"
