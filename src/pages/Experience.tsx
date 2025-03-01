@@ -150,11 +150,11 @@ const Experience = () => {
                             className="w-full h-auto max-h-40 object-contain mb-4 cursor-pointer hover:opacity-90 transition-opacity"
                           />
                         </DialogTrigger>
-                        <DialogContent className="max-w-3xl bg-neutral-light/90">
+                        <DialogContent className="max-w-3xl max-h-[80vh] overflow-auto bg-neutral-light/90 p-4">
                           <img 
                             src={cert.media} 
                             alt={cert.name} 
-                            className="w-full h-auto object-contain" 
+                            className="w-full h-auto max-h-[70vh] object-contain mx-auto" 
                           />
                         </DialogContent>
                       </Dialog>
