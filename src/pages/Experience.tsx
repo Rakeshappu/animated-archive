@@ -1,15 +1,16 @@
 
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Badge } from "@/components/ui/badge";
-import hackerRank from "@/images/HackerRank.png"
-import PS from "@/images/PS.png"
-import GAI from "@/images/GAI.png"
-import NPTL from "@/images/NPTL.png"
-import AIML from "@/images/AIML.png"
-import AD from "@/images/AD.png"
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { Badge } from "../components/ui/badge";
+import hk from "../images/hk.png"
+import PS from "../images/PS.png"
+import GAI from "../images/GAI.png"
+import NPTL from "../images/NPTL.png"
+import AIML from "../images/ALML.png"
+import AD from "../images/AD.png"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+
 
 const Experience = () => {
   const certificates = [
@@ -19,7 +20,7 @@ const Experience = () => {
       issuer: "HackerRank",
       date: "Since 2023",
       skills: ["C language, JavaScript"],
-      media: hackerRank,
+      media: hk,
     },
     {
       id: 2,
