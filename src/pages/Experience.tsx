@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
-import hackerRank from "../images/HackerRank.png"
-import PS from "../images/PS.png"
-import GAI from "../images/GAI.png"
-import NPTL from "../images/NPTL.png"
-import AIML from "../images/ALML.png"
-import AD from "../images/AD.png"
+import hackerRank from "@/images/HackerRank.png"
+import PS from "@/images/PS.png"
+import GAI from "@/images/GAI.png"
+import NPTL from "@/images/NPTL.png"
+import AIML from "@/images/ALML.png"
+import AD from "@/images/AD.png"
 
 const Experience = () => {
   const certificates = [
