@@ -3,39 +3,65 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
+import GenAI from "../images/GenAI.png";
 
 const Experience = () => {
   const certificates = [
     {
       id: 1,
-      name: "React - The Complete Guide",
-      issuer: "Udemy",
-      date: "March 2023",
-      skills: ["React", "Redux", "Hooks", "Context API"],
+      name: "Problem Solving (4 Starts)",
+      issuer: "HackerRank",
+      date: "Since 2023",
+      skills: ["C language, JavaScript"],
+      media: GenAI,
       credentialLink: "#",
     },
     {
       id: 2,
-      name: "Full Stack Development",
-      issuer: "freeCodeCamp",
-      date: "January 2023",
-      skills: ["HTML", "CSS", "JavaScript", "Node.js", "MongoDB"],
+      name: "C Language (4 Starts)",
+      issuer: "HackerRank",
+      date: "Since 2023",
+      skills: ["C language"],
       credentialLink: "#",
     },
     {
       id: 3,
-      name: "Python Data Structures",
-      issuer: "Coursera",
-      date: "November 2022",
-      skills: ["Python", "Data Structures", "Algorithms"],
-      credentialLink: "#",
+      name: "Generative AI Virtual Internship",
+      issuer: "All India Council for Technical Education",
+      date: "October 2024",
+      skills: ["AI"],
+      credentialLink: "9e1f88c410469c0c4408f32ae321d6d0",
     },
     {
       id: 4,
-      name: "Machine Learning Fundamentals",
-      issuer: "edX",
-      date: "August 2022",
-      skills: ["Python", "ML", "Data Analysis"],
+      name: "The Joy of Computing Using Python",
+      issuer: "NPTEL ONLINE CERTIFICATION",
+      date: "October 2024",
+      skills: ["Python"],
+      credentialLink: "#",
+    },
+    {
+      id: 5,
+      name: "AI_ML_Virtual_Internship_Certificate",
+      issuer: "All India Council for Technical Education",
+      date: "June 2024",
+      skills: ["AI","ML"],
+      credentialLink: "2ddfd068e309db8c8a31cb66afd3ff06",
+    },
+    {
+      id: 6,
+      name: "Problem Solving (Basic) Certificate",
+      issuer: "HackerRank",
+      date: "October 2024",
+      skills: ["C"],
+      credentialLink: "#",
+    },
+    {
+      id: 7,
+      name: "Android Developer Virtual Internship",
+      issuer: "All India Council for Technical Education",
+      date: "January 2024",
+      skills: [""],
       credentialLink: "#",
     },
   ];
@@ -76,21 +102,12 @@ const Experience = () => {
                 </ul>
               </div>
 
-              <div className="bg-neutral-light/30 rounded-lg p-6 hover:shadow-md transition-all duration-300">
+              {/* <div className="bg-neutral-light/30 rounded-lg p-6 hover:shadow-md transition-all duration-300">
                 <h3 className="text-xl font-semibold text-primary mb-2">
-                  What I Bring to the Table
+                  
                 </h3>
-                <p className="text-gray-300 mb-4">
-                  While I'm building my professional experience, I offer:
-                </p>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
-                  <li>Strong foundation in programming fundamentals</li>
-                  <li>Experience with modern development tools and frameworks</li>
-                  <li>Problem-solving skills and analytical thinking</li>
-                  <li>Dedication to continuous learning and improvement</li>
-                  <li>Ability to collaborate effectively in team environments</li>
-                </ul>
-              </div>
+                
+              </div> */}
             </div>
           </div>
         </section>
@@ -130,6 +147,7 @@ const Experience = () => {
                         </Badge>
                       ))}
                     </div>
+                    <img src={cert.media} alt="" />
                     <a
                       href={cert.credentialLink}
                       target="_blank"
