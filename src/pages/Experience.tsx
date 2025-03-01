@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
-import GenAI from "../images/GenAI.png";
+import GenAI from "@/images/GenAI.png";
 
 const Experience = () => {
   const certificates = [
