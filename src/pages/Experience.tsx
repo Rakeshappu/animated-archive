@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -6,8 +7,9 @@ import hackerRank from "@/images/HackerRank.png"
 import PS from "@/images/PS.png"
 import GAI from "@/images/GAI.png"
 import NPTL from "@/images/NPTL.png"
-import AIML from "@/images/ALML.png"
+import AIML from "@/images/AIML.png"
 import AD from "@/images/AD.png"
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const Experience = () => {
   const certificates = [
@@ -138,7 +140,25 @@ const Experience = () => {
                         </Badge>
                       ))}
                     </div>
-                    {cert.media && <img src={cert.media} alt={cert.name} className="w-full h-auto max-h-40 object-contain mb-4" />}
+                    
+                    {cert.media && (
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <img 
+                            src={cert.media} 
+                            alt={cert.name} 
+                            className="w-full h-auto max-h-40 object-contain mb-4 cursor-pointer hover:opacity-90 transition-opacity"
+                          />
+                        </DialogTrigger>
+                        <DialogContent className="max-w-3xl bg-neutral-light/90">
+                          <img 
+                            src={cert.media} 
+                            alt={cert.name} 
+                            className="w-full h-auto object-contain" 
+                          />
+                        </DialogContent>
+                      </Dialog>
+                    )}
                     
                   </div>
                 </motion.div>
